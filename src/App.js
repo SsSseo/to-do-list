@@ -70,10 +70,6 @@ function App() {
     }))
   }
 
-  const aa = () => {
-    console.log(list)
-  }
-
   return (
 
     <div className='to-do-list'>
@@ -130,7 +126,6 @@ function App() {
             )
           })}
       </div>
-      <button onClick={aa}>확인</button>
     </div>
   );
 }
