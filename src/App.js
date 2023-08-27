@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import Working from "./component/Working"
 import Header from "./component/Header"
 import Done from "./component/Done"
+import { createId } from '@paralleldrive/cuid2';
 
 function App() {
 
@@ -14,9 +15,6 @@ function App() {
   //제목, 내용 받아오기 위한 코드
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
-
-  //고유한 id를 만들기 위해 추가
-  const [nextId, setNextId] = useState(2);
 
   //제목 저장
   const titleChangeHandler = (event) => {
@@ -30,8 +28,9 @@ function App() {
 
   //+ 버튼을 눌러 글 추가(고유한 아이디 생성 부분)
   const clickAddButtonHandler = () => {
+    //id 랜덤값으로 자동 부여
     const newList = {
-      id: nextId,
+      id: createId(),
       title,
       body,
       isDone: false
@@ -41,7 +40,6 @@ function App() {
       setList([...list, newList])
       setTitle("")
       setBody("")
-      setNextId(nextId + 1);
     } else {
       alert('빈 칸을 채워주세요')
     }
