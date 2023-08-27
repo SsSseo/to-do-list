@@ -1,13 +1,25 @@
-🔸반복되는 컴포넌트
-📁src/component/Done.jsx
+🔸반복되는 컴포넌트 <br>
+📁src/component/Done.jsx<br>
 📁src/component/Working.jsx
+
+<br>
+
+<br>
 
 🔸어떤것이 반복되는가
 - 추가 한 to do list 를 반복해서 띄워준다.
 
+<br>
+
+<br>
+
 🔸왜 두개인가?
 - isDone: true일 때 취소 버튼이,
 - isDone: false일 때 완료 버튼으로 띄우기 위해 나누었다.
+
+<br>
+
+<br>
 
 🔸코드
 1. 📁src/component/Done.jsx
