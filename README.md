@@ -20,7 +20,7 @@
 const Working = ({ item, clickDeleteButtonHandler, clickDoneButtonHandler, clickWorkingButtonHandler }) => {
   return (
     <div key={item.id} className="list-container">
-      <div className="check-icon">🧡</div>
+      <div className="check-icon">{item.isDone? "💙" : "🧡"}</div>
       <div className="list-item">
         <div className="list-title">{item.title}</div>
         <div className="list-content">{item.body}</div>
