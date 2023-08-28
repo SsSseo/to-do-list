@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState } from "react"
 import Working from "./component/Working"
 import Header from "./component/Header"
+import Write from "./component/Write"
 import { createId } from '@paralleldrive/cuid2';
 
 function App() {
@@ -78,23 +79,13 @@ function App() {
     <div className='to-do-list'>
       <Header />
 
-      <div className="write-box">
-        <div className="write-list">
-          <input
-            value={title}
-            onChange={titleChangeHandler}
-            type="text"
-            placeholder="제목을 입력하세요"
-            maxlength='30' />
-          <input
-            value={body}
-            onChange={bodyChangeHandler}
-            type="text"
-            placeholder="내용을 입력하세요"
-            maxlength='30' />
-        </div>
-        <button onClick={clickAddButtonHandler} className="write-button">+</button>
-      </div>
+      <Write
+        title={title}
+        body={body}
+        titleChangeHandler={titleChangeHandler}
+        bodyChangeHandler={bodyChangeHandler}
+        clickAddButtonHandler={clickAddButtonHandler}
+      />
 
 
       <div className='list'>
