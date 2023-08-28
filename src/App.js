@@ -7,6 +7,10 @@ import { createId } from '@paralleldrive/cuid2';
 
 function App() {
 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100&family=Nanum+Gothic&family=Nanum+Gothic+Coding&family=Noto+Sans+KR&family=Single+Day&display=swap');
+  </style>
+
   const [list, setList] = useState([
     { id: 0, title: "투두리스트만들기", body: "열심히 만들어 보자!", isDone: false },
     { id: 1, title: "투두리스트는", body: "영어로 To Do List", isDone: true }
@@ -77,16 +81,18 @@ function App() {
 
       <div className="write-box">
         <div className="write-list">
-          <textarea
+          <input
             value={title}
             onChange={titleChangeHandler}
             type="text"
-            placeholder="제목을 입력하세요" />
-          <textarea
+            placeholder="제목을 입력하세요"
+            maxlength='30' />
+          <input
             value={body}
             onChange={bodyChangeHandler}
             type="text"
-            placeholder="내용을 입력하세요" />
+            placeholder="내용을 입력하세요"
+            maxlength='30' />
         </div>
         <button onClick={clickAddButtonHandler} className="write-button">+</button>
       </div>
