@@ -32,6 +32,11 @@ function App() {
 
   //+ 버튼을 눌러 글 추가(고유한 아이디 생성 부분)
   const clickAddButtonHandler = () => {
+    //newList 투두리스트 추가 (제목, 내용 비어있으면 alert 띄우기)   
+    if (!title.length && !body.length) {
+      return alert('빈 칸을 채워주세요')
+    }
+
     //id 랜덤값으로 자동 부여
     const newList = {
       id: createId(),
@@ -39,14 +44,10 @@ function App() {
       body,
       isDone: false
     }
-    //newList 투두리스트 추가 (제목, 내용 비어있으면 alert 띄우기)   
-    if (title.length !== 0 && body.length !== 0) {
-      setList([...list, newList])
-      setTitle("")
-      setBody("")
-    } else {
-      alert('빈 칸을 채워주세요')
-    }
+
+    setList([...list, newList])
+    setTitle("")
+    setBody("")
   }
 
   //삭제
