@@ -2,7 +2,6 @@ import './App.css';
 import React, { useState } from "react"
 import Working from "./component/Working"
 import Header from "./component/Header"
-import Done from "./component/Done"
 import { createId } from '@paralleldrive/cuid2';
 
 function App() {
@@ -99,8 +98,8 @@ function App() {
 
 
       <div className='list'>
-        <span className='working-list'>▼  Working</span>
 
+        <span className='working-list'>▼  Working</span>
 
         {list
           .filter(item => !item.isDone)
@@ -111,6 +110,7 @@ function App() {
                 item={item}
                 clickDeleteButtonHandler={clickDeleteButtonHandler}
                 clickDoneButtonHandler={clickDoneButtonHandler}
+                clickWorkingButtonHandler={clickWorkingButtonHandler}
               />
             )
           })}
@@ -123,10 +123,11 @@ function App() {
           .filter(item => item.isDone)
           .map(item => {
             return (
-              <Done
+              <Working
                 key={item.id}
                 item={item}
                 clickDeleteButtonHandler={clickDeleteButtonHandler}
+                clickDoneButtonHandler={clickDoneButtonHandler}
                 clickWorkingButtonHandler={clickWorkingButtonHandler}
               />
             )
